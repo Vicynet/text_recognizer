@@ -6,6 +6,9 @@ TextLinkRecognizer
 
 This package recognizes URLs in a String of text (E.g imagine you are working on a chat app, and links will be part of the chat). Allos you to apply custom styling to both the ordinary texts and link texts, and handles click events to open the URLs in a web browser.
 
+![Alt text](sample.png)
+
+
 ## Features
 
 - Recognizes URLs in text strings

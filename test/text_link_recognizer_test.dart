@@ -8,11 +8,11 @@ void main() {
   group('LinkScanner', () {
     test('findLinks should find all URLs in the text', () {
       final linkScanner = LinkScanner();
-      const text = 'I am https://ttyyt.com in my https://foodknot.com';
+      const text = 'I lend my voice with https://squairr.com and get my meals from https://foodknot.com';
       final links = linkScanner.findLinks(text);
 
       expect(links.length, 2);
-      expect(links.elementAt(0).group(0), 'https://ttyyt.com');
+      expect(links.elementAt(0).group(0), 'https://squairr.com');
       expect(links.elementAt(1).group(0), 'https://foodknot.com');
     });
 
@@ -28,7 +28,7 @@ void main() {
   group('CreateTextSpans', () {
     test('textSpans should create TextSpans with links and text', () {
       final createTextSpans = CreateTextSpans();
-      const text = 'I am https://ttyyt.com in my https://foodknot.com';
+      const text = 'I lend my voice with https://squairr.com and get my meals from https://foodknot.com';
       final linkScanner = LinkScanner();
       final matches = linkScanner.findLinks(text);
       const textStyle = TextStyle(color: Colors.black);
@@ -38,11 +38,11 @@ void main() {
           createTextSpans.textSpans(matches, text, textStyle, linkStyle);
 
       expect(spans.length, 4);
-      expect(spans[0].text, 'I am ');
+      expect(spans[0].text, 'I lend my voice with ');
       expect(spans[0].style, textStyle);
-      expect(spans[1].text, 'https://ttyyt.com');
+      expect(spans[1].text, 'https://squairr.com');
       expect(spans[1].style, linkStyle);
-      expect(spans[2].text, ' in my ');
+      expect(spans[2].text, ' and get my meals from ');
       expect(spans[2].style, textStyle);
       expect(spans[3].text, 'https://foodknot.com');
       expect(spans[3].style, linkStyle);
@@ -52,7 +52,7 @@ void main() {
   group('TextLinkRecognizer', () {
     testWidgets('TextLinkRecognizer should display text with clickable links',
         (WidgetTester tester) async {
-      const text = 'I am https://squairr.com in my https://foodknot.com';
+      const text = 'I lend my voice with https://squairr.com and get my meals from https://foodknot.com';
       const textStyle = TextStyle(color: Colors.black);
       const linkStyle = TextStyle(color: Colors.red);
 
@@ -73,9 +73,9 @@ void main() {
       final textSpan = richTextWidget.text as TextSpan;
 
       expect(textSpan.children?.length, 4);
-      expect((textSpan.children?[0] as TextSpan).text, 'I am ');
+      expect((textSpan.children?[0] as TextSpan).text, 'I lend my voice with ');
       expect((textSpan.children?[1] as TextSpan).text, 'https://squairr.com');
-      expect((textSpan.children?[2] as TextSpan).text, ' in my ');
+      expect((textSpan.children?[2] as TextSpan).text, ' and get my meals from ');
       expect((textSpan.children?[3] as TextSpan).text, 'https://foodknot.com');
     });
   });

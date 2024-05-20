@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: TextLinkRecognizer(
-              text: 'I am https://squairr.com in my https://foodknot.com',
+              text: 'I lend my voice with https://squairr.com and get my meals from https://foodknot.com',
               textStyle: TextStyle(color: Colors.black),
               linkStyle: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
             ),
