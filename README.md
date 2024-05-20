@@ -23,9 +23,6 @@ dependencies:
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```
 import 'package:flutter/material.dart';
 import 'package:your_package_name/your_package_name.dart';
