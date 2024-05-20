@@ -78,36 +78,5 @@ void main() {
       expect((textSpan.children?[2] as TextSpan).text, ' in my ');
       expect((textSpan.children?[3] as TextSpan).text, 'https://foodknot.com');
     });
-
-    // testWidgets('Clickable link should launch URL',
-    //     (WidgetTester tester) async {
-    //   const text = 'I am https://squairr.com in my https://foodknot.com';
-    //   const textStyle = TextStyle(color: Colors.black);
-    //   const linkStyle = TextStyle(color: Colors.red);
-    //   final Uri any = Uri.parse('https://foodknot.com');
-
-    //   await tester.pumpWidget(const MaterialApp(
-    //     home: Scaffold(
-    //       body: TextLinkRecognizer(
-    //         text: text,
-    //         textStyle: textStyle,
-    //         linkStyle: linkStyle,
-    //       ),
-    //     ),
-    //   ));
-
-    //   final richText = find.byType(RichText);
-    //   expect(richText, findsOneWidget);
-
-    //   final linkText = find.text('https://squairr.com');
-    //   expect(linkText, findsOneWidget);
-
-    //   // Use the mock to verify that the URL launcher is called with the correct URL
-    //   when(launchUrl(any, mode: LaunchMode.inAppBrowserView))
-    //       .thenAnswer((_) async => true);
-
-    //   await tester.tap(linkText);
-    //   verify(launchUrl(any, mode: LaunchMode.inAppBrowserView)).called(1);
-    // });
   });
 }
